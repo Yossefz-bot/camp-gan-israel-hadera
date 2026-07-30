@@ -1,30 +1,37 @@
-# קעמפ גן ישראל חדרה — Cloudflare V4
+# קעמפ גן ישראל חדרה — Cloudflare V5
 
-מערכת עובדת ל־Cloudflare Pages הכוללת אתר ציבורי, גלריות לפי ימים, D1, אחסון R2 ופאנל ניהול.
+גרסה מאוחדת: מערכת הניהול המלאה בסגנון Google Apps Script יחד עם Cloudflare Pages, ‏D1 ו־R2.
 
-## מבנה
-- `public/` האתר ופאנל הניהול
-- `functions/` API של Cloudflare Pages Functions
-- `migrations/0001_schema.sql` סכמת D1
+## מה יש במערכת הניהול
+- לוח בקרה עם נתונים וספירות
+- יצירה, עריכה, הסתרה, סדר ומחיקה של ימים
+- תאריך עברי אוטומטי
+- תמונת שער לכל יום
+- העלאת כמה תמונות יחד, סרטונים והמנונים ישירות ל־R2
+- ספריית מדיה כללית ושיבוץ תמונות כלוגו, באנר ותמונות תחתית
+- עריכת כל תוכן האתר, צבעים ו־SEO
+- הודעות באתר
+- ניהול המנונים, סדר, שמות והצגה/הסתרה
+- תגובות הורים: ממתין, אישור, דחייה, עריכה ומחיקה
+- נרשמים לעדכונים, סטטוס וייצוא CSV
+- בדיקת חיבור D1/R2 ואבטחה
 
-## הגדרות Cloudflare Pages
-- Framework preset: None
-- Build command: `exit 0`
-- Build output directory: `public`
+## שדרוג מהגרסה הקיימת
+1. העלה את כל תוכן התיקייה הזאת ל־GitHub תוך שמירת התיקיות `public`, `functions`, `migrations`.
+2. המתן לפריסה ירוקה ב־Cloudflare.
+3. פתח D1 → `camp-database` → Console.
+4. הדבק והריץ פעם אחת את `migrations/0002_upgrade_admin.sql`.
+5. בצע Retry deployment או Commit קטן חדש.
+6. פתח `/admin/` ורענן עם Ctrl+F5.
 
-## Bindings שחייבים ליצור בפרויקט Pages
-Settings → Bindings:
-1. D1 database binding בשם `DB` ולבחור `camp-database`
-2. R2 bucket binding בשם `MEDIA` ולבחור `camp-media`
+## Bindings
+הקובץ `wrangler.jsonc` כבר מכיל:
+- D1 בשם `DB` אל `camp-database`
+- R2 בשם `MEDIA` אל `camp-media`
 
-## משתנה סודי
-Settings → Variables and Secrets:
-- `ADMIN_TOKEN` — קוד ארוך וסודי לבחירתך
+## Secret
+ב־Cloudflare חייב להיות Secret בשם:
+- `ADMIN_TOKEN`
 
-## יצירת הטבלאות
-ב־D1 Console הדבק והריץ את התוכן של `migrations/0001_schema.sql`.
-
-## כניסה לניהול
-`https://YOUR-DOMAIN/admin/`
-
-הזן את הערך שהגדרת ב־`ADMIN_TOKEN`.
+## כניסה
+`https://camp-gan-israel-hadera.pages.dev/admin/`

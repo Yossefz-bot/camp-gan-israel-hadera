@@ -1,7 +1,39 @@
-<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>קעמפ גן ישראל חדרה</title><meta name="description" content="גלריות, סרטונים ושירים מקעמפ גן ישראל חדרה"><link rel="stylesheet" href="/assets/css/main.css"></head><body>
-<header class="topbar"><a class="brand" href="/">קעמפ גן ישראל חדרה</a><nav><a href="#gallery">גלריות</a><a href="#updates">עדכונים</a><a href="/admin/">ניהול</a></nav></header>
-<main><section class="hero"><div class="hero-glow"></div><div class="hero-content"><span class="eyebrow">קיץ של חוויה • שליחות • חברות</span><h1 id="heroTitle">הקיץ שלא שוכחים</h1><p id="heroText">רגעים, חוויות וזיכרונות מהקעמפ שלנו</p><a class="primary" href="#gallery">לגלריות האחרונות</a></div></section>
-<section id="updates" class="section"><div id="message" class="message hidden"></div></section>
-<section id="gallery" class="section"><div class="section-head"><div><span class="eyebrow">כל הרגעים במקום אחד</span><h2>גלריות לפי ימים</h2></div></div><div id="days" class="days"><div class="loading">טוען גלריות…</div></div></section>
-<section class="section newsletter"><div><span class="eyebrow">נשארים מעודכנים</span><h2>לקבלת עדכונים מהקעמפ</h2></div><form id="subscribe"><input name="name" placeholder="שם"><input name="email" type="email" required placeholder="אימייל"><button>הרשמה</button></form><p id="subStatus"></p></section></main>
-<footer>© <span id="year"></span> קעמפ גן ישראל חדרה</footer><script src="/assets/js/app.js" defer></script></body></html>
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>קעמפ גן ישראל חדרה</title>
+  <meta id="metaDescription" name="description" content="גלריות, סרטונים ושירים מקעמפ גן ישראל חדרה">
+  <meta id="metaKeywords" name="keywords" content="קעמפ, גן ישראל, חדרה">
+  <meta property="og:type" content="website"><meta id="ogTitle" property="og:title" content="קעמפ גן ישראל חדרה"><meta id="ogDescription" property="og:description" content="גלריות, סרטונים ושירים">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><img id="brandLogo" class="hidden" alt=""><span id="brandName">קעמפ גן ישראל חדרה</span></a>
+    <nav><a href="#gallery">גלריות</a><a href="#songs">המנונים</a><a href="#testimonials">תגובות</a><a href="#updates">עדכונים</a><a href="/admin/">ניהול</a></nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero"><div class="hero-glow"></div><div class="hero-content"><span id="heroKicker" class="eyebrow">קיץ של חוויה • שליחות • חברות</span><h1 id="heroTitle">הקיץ שלא שוכחים</h1><p id="heroText">רגעים, חוויות וזיכרונות מהקעמפ שלנו</p><div id="heroButtons"><a class="primary" href="#gallery">לגלריות האחרונות</a></div></div></section>
+
+    <section id="updates" class="section"><div id="message" class="message hidden"></div></section>
+
+    <section id="registrationSection" class="section hidden"><div class="section-head"><div><span class="eyebrow">נרשמים לקעמפ</span><h2>סרטון הרשמה</h2></div></div><div id="registrationVideo" class="video-wrap landscape"></div></section>
+
+    <section id="storySection" class="story hidden"><div id="storyCard" class="story-card"><div><span id="storyKicker" class="eyebrow"></span><h2 id="storyTitle"></h2><p id="storyText"></p></div></div></section>
+
+    <section id="gallery" class="section"><div class="section-head"><div><span class="eyebrow">כל הרגעים במקום אחד</span><h2>גלריות לפי ימים</h2></div></div><div id="days" class="days"><div class="loading">טוען גלריות…</div></div></section>
+
+    <section id="songs" class="section songs-section hidden"><div class="section-head"><div><span class="eyebrow">הפסקול של הקעמפ</span><h2>המנוני הקעמפ</h2></div><div class="song-controls"><button id="shuffleSongs">ערבוב</button><button id="loopSongs">חזרה: כבוי</button></div></div><audio id="mainAudio" preload="metadata"></audio><div id="songsList" class="songs-list"></div></section>
+
+    <section id="testimonials" class="section testimonials"><div class="section-head"><div><span class="eyebrow">מה ההורים מספרים</span><h2>תגובות מהקעמפ</h2></div></div><div id="testimonialGrid" class="testimonial-grid"></div><form id="testimonialForm" class="public-form" style="margin-top:24px"><input name="name" required placeholder="שם"><input name="phone" placeholder="טלפון"><select name="rating"><option value="5">5 כוכבים</option><option value="4">4 כוכבים</option><option value="3">3 כוכבים</option></select><textarea name="message" rows="4" required placeholder="כתבו לנו כמה מילים"></textarea><button>שליחת תגובה לאישור</button></form><p id="testimonialStatus"></p></section>
+
+    <section class="section newsletter"><div><span class="eyebrow">נשארים מעודכנים</span><h2>לקבלת עדכונים מהקעמפ</h2></div><form id="subscribe"><input name="name" placeholder="שם"><input name="email" type="email" required placeholder="אימייל"><button>הרשמה</button></form><p id="subStatus"></p></section>
+  </main>
+
+  <footer><div id="footerLogos" class="footer-logos"></div><div id="footerText">© <span id="year"></span> קעמפ גן ישראל חדרה</div></footer>
+  <script src="/assets/js/app.js" defer></script>
+</body>
+</html>
