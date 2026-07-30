@@ -2,5 +2,20 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "camp-gan-israel-hadera",
   "pages_build_output_dir": "public",
-  "compatibility_date": "2026-07-30"
+  "compatibility_date": "2026-07-30",
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "camp-database",
+      "database_id": "d882755e-0b59-4a1c-8d98-296f04fbbe7d"
+    }
+  ],
+
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "camp-media"
+    }
+  ]
 }
